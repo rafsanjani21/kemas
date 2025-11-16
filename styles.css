@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000000;
+  --card: #111c30;
+  --header: #05050e;
+  --text: #e6eef8;
+  --muted: #8f9bb3;
+  --accent: #3180ee;
+  --radius: 14px;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg), #091425 80%);
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.site-header {
+  padding: 1.5rem 0;
+  text-align: center;
+  background-color: var(--header);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.site-title {
+  font-size: clamp(1.2rem, 4vw, 2rem); /* responsive */
+  letter-spacing: 0.5px;
+}
+
+.main-content {
+  margin-top: 0rem;
+}
+
+.profile-card {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  margin-top: 3rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+}
+.profile-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+
+.profile-right {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 500px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.08);
+
+}
+
+.name {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 0rem;
+  text-align: center;
+}
+
+.desc {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: start;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: start;
+}
+
+.skill {
+  background: rgba(255,255,255,0.05);
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.skill:hover {
+  background: var(--accent);
+  color: #fff;
+  transition: 0.2s;
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(58, 133, 237, 0.25);
+}
+
+.btn-primary {
+  padding: 0.7rem 1.1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.15s;
+  box-shadow: 0 6px 20px rgba(58, 133, 237, 0.25);
+  display: block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  color: var(--muted);
+  background-color: var(--card);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.social-links {
+  margin-top: 0.5rem;
+}
+
+.social-icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 0.5rem;
+}
+
+.social-icon img {
+  width: 25px;
+  height: 25px;
+  filter: invert(1);
+}
+
+.social-icon:hover img {
+  filter: invert(0.6) sepia(1) saturate(5) hue-rotate(200deg);
+}
+
+/* ====== RESPONSIVE FIXES ====== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .profile-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+    height: 75vh;
+  }
+
+  .profile-left {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0 1.5rem;
+  }
+
+  .profile-right {
+    justify-content: center;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+
+  .skill-list {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .profile-photo {
+    width: 400px;
+    height: 400px;
+  }
+
+  .site-footer {
+    font-size: 0.9rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  .profile-card {
+    gap: 1rem;
+    height: auto;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    }
+  
+    .profile-photo {
+    width: 190px;
+    height: 190px;
+  }
+
+  .skill {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
